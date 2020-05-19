@@ -1,5 +1,3 @@
-CREATE DATABASE Hotel;
-	--1
 CREATE TABLE Employees(
              Id int NOT NULL PRIMARY KEY,
              FirstName nvarchar(50) NOT NULL, 
@@ -50,7 +48,7 @@ CREATE TABLE RoomTypes(
              ('RoomTypes 2', 'Notes 2'),
 	         ('RoomTypes 3', 'Notes 3');
 	--5
-	CREATE TABLE BedTypes(
+CREATE TABLE BedTypes(
 			 BedTypes nvarchar(50) NOT NULL,
              Notes nvarchar(max));
 
@@ -75,10 +73,10 @@ CREATE TABLE Rooms(
 CREATE TABLE Payments(
              Id int NOT NULL PRIMARY KEY,
 			 EmployeeId int FOREIGN KEY REFERENCES Employees(Id),
-			 PaymentDate date NOT NULL,
+			 PaymentDate datetime2 NOT NULL,
 			 AccountNumber int FOREIGN KEY REFERENCES Customers(AccountNumber),
-			 FirstDateOccupied date NOT NULL,
-			 LastDateOccupied date NOT NULL,
+			 FirstDateOccupied datetime2 NOT NULL,
+			 LastDateOccupied datetime2 NOT NULL,
 			 TotalDays int NOT NULL,
 			 AmountCharged decimal(5,2) NOT NULL,
 			 TaxRate decimal(5,2) NOT NULL,
@@ -96,7 +94,7 @@ CREATE TABLE Payments(
 CREATE TABLE Occupancies(
              Id int NOT NULL PRIMARY KEY,
 			 EmployeeId int FOREIGN KEY REFERENCES Employees(Id),
-			 DateOccupied date NOT NULL,
+			 DateOccupied datetime2 NOT NULL,
 			 AccountNumber int FOREIGN KEY REFERENCES Customers(AccountNumber),
 			 RoomNumber int FOREIGN KEY REFERENCES Rooms(RoomNumber),
              RateApplied decimal(5,2) NOT NULL,
