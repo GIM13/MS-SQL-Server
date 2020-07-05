@@ -142,14 +142,14 @@ CREATE PROC usp_DeleteEmployeesFromDepartment
            COMMIT;
 
  --22. Delete Employees
- CREATE TABLE [Deleted_Employees]([EmployeeID] INT IDENTITY PRIMARY KEY
-	                             ,[FirstName] NVARCHAR(50) NOT NULL
-	                             ,[LastName] NVARCHAR(50) NOT NULL
-	                             ,[MiddleName] NVARCHAR(50) NULL
-	                             ,[JobTitle] NVARCHAR(50) NOT NULL
-	                             ,[DepartmentID] INT NOT NULL
-	                             ,[Salary] DECIMAL(15,2) NOT NULL);
-
+-- CREATE TABLE [Deleted_Employees]([EmployeeID] INT IDENTITY PRIMARY KEY
+--	                             ,[FirstName] NVARCHAR(50) NOT NULL
+--	                             ,[LastName] NVARCHAR(50) NOT NULL
+--	                             ,[MiddleName] NVARCHAR(50) NULL
+--	                             ,[JobTitle] NVARCHAR(50) NOT NULL
+--	                             ,[DepartmentID] INT NOT NULL
+--	                             ,[Salary] DECIMAL(15,2) NOT NULL);
+--
  CREATE TRIGGER tr_InsertsDeletedEmployees
      ON [Employees]
     FOR DELETE 

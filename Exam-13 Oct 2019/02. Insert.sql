@@ -1,0 +1,19 @@
+
+ --02. Insert
+    --1
+ INSERT INTO [Files]([Name],[Size],[ParentId],[CommitId])
+      VALUES ('Trade.idk', 2598.0,	1, 1)
+            ,('menu.net', 9238.31,	2, 2)
+            ,('Administrate.soshy', 1246.93,	3, 3)
+            ,('Controller.php', 7353.15,	4, 4)
+            ,('Find.java', 9957.86,	5, 5)
+            ,('Controller.json', 14034.87,	6, 6)
+            ,('Operate.xix', 7662.92,	7, 7);
+
+	--2 
+ INSERT INTO [Issues]
+      VALUES ('Critical Problem with HomeController.cs file', 'open'  , 1, 4)
+            ,('Typo fix in Judge.html'                      , 'open'  , 4, 3)
+	        ,('Implement documentation for UsersService.cs' , 'closed', 8, 2)
+			,('Unreachable code in Index.cs                ', 'open'  , 9, 8);
+

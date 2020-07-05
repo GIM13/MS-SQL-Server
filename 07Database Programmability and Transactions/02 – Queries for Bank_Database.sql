@@ -47,10 +47,10 @@ ORDER BY [First Name], [Last Name];
           WHERE [Accounts].[Id] = @accountId;
 
  --14. Create Table Logs
- CREATE TABLE [Logs] ([LogId] INT IDENTITY
-                     ,[AccountId] INT
-				     ,[OldSum] DECIMAL(15,2)
-				     ,[NewSum] DECIMAL(15,2));
+-- CREATE TABLE [Logs] ([LogId] INT IDENTITY
+--                     ,[AccountId] INT
+--				       ,[OldSum] DECIMAL(15,2)
+--				       ,[NewSum] DECIMAL(15,2));
 
  CREATE TRIGGER tr_NewEntryIntoTheLogs
      ON [Accounts] 
@@ -64,10 +64,10 @@ ORDER BY [First Name], [Last Name];
 			            FROM inserted));
 
  --15. Create Table Emails
- CREATE TABLE [NotificationEmails] ([Id] INT IDENTITY
-                                   ,[Recipient] INT
-				                   ,[Subject] NVARCHAR(700)
-				                   ,[Body] NVARCHAR(MAX));
+-- CREATE TABLE [NotificationEmails] ([Id] INT IDENTITY
+--                                   ,[Recipient] INT
+--				                   ,[Subject] NVARCHAR(700)
+--				                   ,[Body] NVARCHAR(MAX));
 
  CREATE TRIGGER tr_CreateNewEmail 
      ON [Logs] 
